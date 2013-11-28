@@ -1,0 +1,16 @@
+{
+    "autoload": {
+        "psr-0": {
+            "Benchmark": "benchmarks/"
+        }
+    },
+    "require": {
+        "php": ">=5.5.0",
+        "athletic/athletic": "~0.1",
+        "mnapoli/php-di": "dev-feature/Compiler",
+        "symfony/dependency-injection": "2.4.x-dev",
+        "symfony/config": "2.4.x-dev"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
