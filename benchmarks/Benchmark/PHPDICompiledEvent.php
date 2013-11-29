@@ -19,6 +19,13 @@ class PHPDICompiledEvent extends AthleticEvent
 
     public function classSetUp()
     {
+        // Clear all files in directory
+        foreach (glob(__DIR__ . '/cache/phpdi/*.php') as $file) {
+            if (is_file($file)) {
+                unlink($file);
+            }
+        }
+
         $builder = new ContainerBuilder();
         $builder->compileContainer(__DIR__ . '/cache/phpdi');
         $this->container = $builder->build();
