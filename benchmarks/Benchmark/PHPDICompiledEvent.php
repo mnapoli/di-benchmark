@@ -67,4 +67,18 @@ class PHPDICompiledEvent extends AthleticEvent
             $container->get(Foo::class);
         }
     }
+
+    /**
+     * @iterations 1000
+     */
+    public function buildAnd50Get()
+    {
+        $builder = new ContainerBuilder();
+        $builder->compileContainer(__DIR__ . '/cache/phpdi');
+        $container = $builder->build();
+
+        for ($i = 0; $i < 50; $i++) {
+            $container->get(Foo::class);
+        }
+    }
 }

@@ -57,6 +57,18 @@ class SymfonyEvent extends AthleticEvent
         }
     }
 
+    /**
+     * @iterations 1000
+     */
+    public function buildAnd50Get()
+    {
+        $container = self::buildContainer();
+
+        for ($i = 0; $i < 50; $i++) {
+            $container->get(Foo::class);
+        }
+    }
+
     public static function buildContainer()
     {
         $container = new ContainerBuilder();
