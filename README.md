@@ -5,7 +5,7 @@
 Install the dependencies using Composer:
 
 ```sh
-$ composer install
+$ composer install -o
 ```
 
 Run the benchmarks:

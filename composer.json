@@ -8,8 +8,8 @@
         "php": ">=5.5.0",
         "athletic/athletic": "~0.1",
         "mnapoli/php-di": "dev-feature/Compiler",
-        "symfony/dependency-injection": "2.4.x-dev",
-        "symfony/config": "2.4.x-dev"
+        "symfony/dependency-injection": "2.4.*",
+        "symfony/config": "2.4.*"
     },
     "minimum-stability": "dev",
     "prefer-stable": true
