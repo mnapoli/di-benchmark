@@ -9,7 +9,8 @@
         "athletic/athletic": "~0.1",
         "mnapoli/php-di": "dev-feature/Compiler",
         "symfony/dependency-injection": "2.4.*",
-        "symfony/config": "2.4.*"
+        "symfony/config": "2.4.*",
+        "aura/di": "1.*"
     },
     "minimum-stability": "dev",
     "prefer-stable": true
