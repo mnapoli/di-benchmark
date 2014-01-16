@@ -8,8 +8,15 @@ Install the dependencies using Composer:
 $ composer install -o
 ```
 
+Then, you can either boot a VM using Vagrant, or configure Apache.
+
+1. Using vagrant: `vagrant up`
+2. On your machine: `sudo ln -s web/ /var/www/di-benchmark`
+
+If you use your machine, remember to disable xdebug.
+
 Run the benchmarks:
 
 ```sh
-$ php -n vendor/bin/athletic -p benchmarks -b vendor/autoload.php
+$ ./run.sh
 ```
