@@ -1,7 +1,7 @@
 {
     "autoload": {
-        "psr-0": {
-            "Benchmark\\": "benchmarks/"
+        "psr-4": {
+            "Benchmark\\": "src/"
         }
     },
     "require": {
