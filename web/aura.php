@@ -39,6 +39,9 @@ $container->params['cde'] = [
 for ($i = 0; $i < 50; $i++) {
     $container->get(Foo::class);
 }
+for ($i = 0; $i < 10; $i++) {
+    $container->has('cde');
+}
 for ($i = 0; $i < 50; $i++) {
     $container->get('cde');
 }
