@@ -10,24 +10,24 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 $container = new ContainerBuilder();
 
-$container->register(Baz::class, Baz::class);
+$container->register('Benchmark\Fixture\Baz', 'Benchmark\Fixture\Baz');
 
-$container->register(Bar::class, Bar::class)
-    ->addArgument(new Reference(Baz::class));
+$container->register('Benchmark\Fixture\Bar', 'Benchmark\Fixture\Bar')
+    ->addArgument(new Reference('Benchmark\Fixture\Baz'));
 
-$container->register(Foo::class, Foo::class)
-    ->addArgument(new Reference(Bar::class))
-    ->addArgument(new Reference(Baz::class));
+$container->register('Benchmark\Fixture\Foo', 'Benchmark\Fixture\Foo')
+    ->addArgument(new Reference('Benchmark\Fixture\Bar'))
+    ->addArgument(new Reference('Benchmark\Fixture\Baz'));
 
-$container->register('abc', Bar::class)
+$container->register('abc', 'Benchmark\Fixture\Bar')
     ->addArgument(new Reference('bcd'));
-$container->register('bcd', Baz::class);
-$container->register('cde', Foo::class)
+$container->register('bcd', 'Benchmark\Fixture\Baz');
+$container->register('cde', 'Benchmark\Fixture\Foo')
     ->addArgument(new Reference('abc'))
     ->addArgument(new Reference('bcd'));
 
 for ($i = 0; $i < 50; $i++) {
-    $container->get(Foo::class);
+    $container->get('Benchmark\Fixture\Foo');
 }
 for ($i = 0; $i < 10; $i++) {
     $container->has('cde');

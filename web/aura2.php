@@ -1,12 +1,10 @@
 <?php
-
-use Aura\Di\Config;
 use Aura\Di\Container;
-use Aura\Di\Forge;
+use Aura\Di\Factory;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-$container = new Container(new Forge(new Config()));
+$container = new Container(new Factory);
 
 $container->params['Benchmark\Fixture\Bar'] = [
     'baz' => $container->lazyNew('Benchmark\Fixture\Baz'),
@@ -22,7 +20,7 @@ $container->set('bcd', $container->lazyNew('Benchmark\Fixture\Baz'));
 $container->set('cde', $container->lazyNew('Benchmark\Fixture\Foo'));
 $container->set('Benchmark\Fixture\Foo', $container->lazyNew('Benchmark\Fixture\Foo'));
 
-for ($i = 0; $i < 50; $i++) {    
+for ($i = 0; $i < 50; $i++) {
     $container->get('Benchmark\Fixture\Foo');
 }
 for ($i = 0; $i < 10; $i++) {

@@ -5,9 +5,9 @@ use Benchmark\Fixture\Baz;
 use Benchmark\Fixture\Foo;
 
 return [
-    'abc' => DI\object(Bar::class)
+    'abc' => DI\object('Benchmark\Fixture\Bar')
             ->constructor(DI\link('bcd')),
-    'bcd' => DI\object(Baz::class),
-    'cde' => DI\object(Foo::class)
+    'bcd' => DI\object('Benchmark\Fixture\Baz'),
+    'cde' => DI\object('Benchmark\Fixture\Foo')
         ->constructor(DI\link('abc'), DI\link('bcd')),
 ];

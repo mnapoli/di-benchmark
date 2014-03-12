@@ -1,6 +1,6 @@
 #!/bin/sh
 
-BASE_URL="http://localhost/di-benchmark"
+BASE_URL="http://localhost/di-benchmark/web"
 WARMUP=20
 ITERATIONS=10000
 CONCURRENT_REQ=10
@@ -14,6 +14,7 @@ ab -n $WARMUP -c 1 ${BASE_URL}/phpdi-compiled.php > /dev/null
 ab -n $WARMUP -c 1 ${BASE_URL}/symfony.php > /dev/null
 ab -n $WARMUP -c 1 ${BASE_URL}/symfony-compiled.php > /dev/null
 ab -n $WARMUP -c 1 ${BASE_URL}/aura.php > /dev/null
+ab -n $WARMUP -c 1 ${BASE_URL}/aura2.php > /dev/null
 
 echo ""
 echo "PHP-DI"
@@ -32,5 +33,9 @@ echo "Symfony compiled"
 ab -q -n $ITERATIONS -c $CONCURRENT_REQ ${BASE_URL}/symfony-compiled.php | grep "Time per request" | grep "(mean)"
 
 echo ""
-echo "Aura"
+echo "Aura v1 "
 ab -q -n $ITERATIONS -c $CONCURRENT_REQ ${BASE_URL}/aura.php | grep "Time per request" | grep "(mean)"
+
+echo ""
+echo "Aura v2 "
+ab -q -n $ITERATIONS -c $CONCURRENT_REQ ${BASE_URL}/aura2.php | grep "Time per request" | grep "(mean)"
