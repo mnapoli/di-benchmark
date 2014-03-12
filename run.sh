@@ -1,6 +1,6 @@
 #!/bin/sh
 
-BASE_URL="http://localhost/di-benchmark/web/"
+BASE_URL="http://localhost/di-benchmark/web"
 WARMUP=20
 ITERATIONS=10000
 CONCURRENT_REQ=10
